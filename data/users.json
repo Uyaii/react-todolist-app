@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "maryanneinyang@gmail.com",
+      "username": "anne",
+      "password": "sw12im34"
+    },
+    {
+      "id": 2,
+      "email": "stellamarisinyang@gmail.com",
+      "username": "stella",
+      "password": "1234"
+    },
+    {
+      "id": 3,
+      "email": "nsi@gmail.com",
+      "username": "nsikak",
+      "password": "nsi2009"
+    }
+  ]
+}
