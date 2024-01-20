@@ -6,11 +6,8 @@ import Landing from "./pages/landing";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 import usersApi from "./API/users";
-import Cookies from "js-cookie";
 import Layout from "./pages/layout";
 import Home from "./pages/home";
-import LoginError from "./components/loginError";
-
 
 function App() {
   const navigate = useNavigate();
@@ -31,10 +28,9 @@ function App() {
     fetchUsers();
   }, [users]);
 
-
   return (
     <Routes>
-      <Route index path="/" element={<Landing />} />
+      <Route index element={<Landing />} />
       <Route
         path="/login"
         element={
@@ -45,10 +41,10 @@ function App() {
           />
         }
       />
-      <Route path="/signup" element={<Signup
-        users={users}
-        setUsers={setUsers}
-      />} />
+      <Route
+        path="/signup"
+        element={<Signup users={users} setUsers={setUsers} />}
+      />
 
       <Route path="/" element={<Layout />}>
         <Route index path="/home" element={<Home />} />

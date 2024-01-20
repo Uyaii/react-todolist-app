@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "maryanneinyang@gmail.com",
+      "username": "anne",
+      "password": "sw12im34"
+    },
+    {
+      "id": "2",
+      "email": "stellamarisinyang@gmail.com",
+      "username": "stella",
+      "password": "1234"
+    },
+    {
+      "id": "3",
+      "email": "nsi@gmail.com",
+      "username": "nsikak",
+      "password": "nsi2009"
+    },
+    {
+      "id": "8c3b08c9-62fe-4f79-b150-fae8b624e5dd",
+      "email": "dalu@gmail.com",
+      "username": "dalu123",
+      "password": "dalu12383"
+    }
+  ]
+}
