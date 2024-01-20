@@ -74,7 +74,7 @@ align-items: center;
 color: red;
 font-weight: bold;
 border-radius: 15px;
-display: none;
+/* display: none; */
 }
 .errMsg svg{
 margin: 1rem;
@@ -82,11 +82,11 @@ cursor: pointer;
 font-size: 20px;
 }
 
-.errMsg .open{
-  display: flex;
+.errMsg .close{
+  display: none;
 }
 .entryForm{
-  height: 500px;
+  min-height: 500px;
   width: 450px;
   background-color: rgb(255, 154, 143);
   display: flex;
@@ -133,6 +133,10 @@ color: #213547;
 
 .entryForm button:hover{
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.entryForm a{
+  margin: 1rem;
 }
 /* .logo {
   height: 6em;

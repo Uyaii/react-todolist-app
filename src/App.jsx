@@ -11,11 +11,10 @@ import Layout from "./pages/layout";
 import Home from "./pages/home";
 import LoginError from "./components/loginError";
 
+
 function App() {
   const navigate = useNavigate();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+
   const [users, setUsers] = useState([]);
   const [authenticatedUser, setAuthenticatedUser] = useState(false);
 
@@ -32,8 +31,6 @@ function App() {
     fetchUsers();
   }, [users]);
 
-  // * Handle Sign Up
-  const handleSignUp = async () => {};
 
   return (
     <Routes>
@@ -43,17 +40,15 @@ function App() {
         element={
           <Login
             users={users}
-            username={username}
-            setUsername={setUsername}
-            password={password}
-            setPassword={setPassword}
             authenticatedUser={authenticatedUser}
             setAuthenticatedUser={setAuthenticatedUser}
-            email={email}
           />
         }
       />
-      <Route path="/signup" element={<Signup />} />
+      <Route path="/signup" element={<Signup
+        users={users}
+        setUsers={setUsers}
+      />} />
 
       <Route path="/" element={<Layout />}>
         <Route index path="/home" element={<Home />} />

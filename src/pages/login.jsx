@@ -3,24 +3,22 @@
 import { Link, useNavigate } from "react-router-dom";
 import { FaXmark } from "react-icons/fa6";
 import Cookies from "js-cookie";
+import { useState } from "react";
+import LoginError from "../components/loginError";
 
-const Login = ({
-  users,
-  username,
-  setUsername,
-  password,
-  setPassword,
-  authenticatedUser,
-  setAuthenticatedUser,
-  email
-}) => {
-  const navigate = useNavigate()
+const Login = ({ users, authenticatedUser, setAuthenticatedUser }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+
+  const navigate = useNavigate();
+
   // * Handle Logging In
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       console.log(users);
-      const user = users.find((user) => {
+      users.find((user) => {
         if (
           (user.username === username || user.email === email) &&
           user.password === password
@@ -30,6 +28,11 @@ const Login = ({
           Cookies.set("username", username);
         } else {
           setAuthenticatedUser(false);
+
+
+          //TODO: Fix Invalid Login Error!!!!!!
+
+
         }
       });
     } catch (err) {
@@ -37,13 +40,13 @@ const Login = ({
     }
     console.log(authenticatedUser);
   };
+
+
   return (
     <section className="form">
-      <div className={authenticatedUser ? "errMsg open" : "errMsg"}>
-        <p>Incorrect Username/Password! </p>
-        <FaXmark />
-      </div>
+ 
 
+      {/* {!authenticatedUser && <LoginError/> } */}
       <form className="entryForm">
         <h2>LOGIN</h2>
 
@@ -67,6 +70,7 @@ const Login = ({
         <button onClick={handleLogin}>Login</button>
         <Link to="/signup">Dont have an account? Sign Up Here</Link>
       </form>
+      
     </section>
   );
 };
